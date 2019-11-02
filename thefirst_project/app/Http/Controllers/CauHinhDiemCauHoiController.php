@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\CauHinhDiemCauHoi;
 
 class CauHinhDiemCauHoiController extends Controller
 {
@@ -24,7 +25,7 @@ class CauHinhDiemCauHoiController extends Controller
      */
     public function create()
     {
-        //
+        return view("them-moi-cau-hinh-diem-cau-hoi");
     }
 
     /**
@@ -35,7 +36,11 @@ class CauHinhDiemCauHoiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cauHinhDiemCauHoi=new CauHinhDiemCauHoi;
+        $cauHinhDiemCauHoi->thu_tu=$request->thu_tu;
+        $cauHinhDiemCauHoi->diem=$request->diem;
+        $cauHinhDiemCauHoi->save();
+        return redirect()->route('cau-hinh-diem-cau-hoi.ds-cau-hinh-diem-cau-hoi');
     }
 
     /**
@@ -46,7 +51,9 @@ class CauHinhDiemCauHoiController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $cauHinhDiemCauHoi=CauHinhDiemCauHoi::find($id);
+        return view('them-moi-cau-hinh-diem-cau-hoi',compact('cauHinhDiemCauHoi'));
     }
 
     /**
@@ -69,7 +76,11 @@ class CauHinhDiemCauHoiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cauHinhDiemCauHoi=CauHinhDiemCauHoi::find($id);
+        $cauHinhDiemCauHoi->thu_tu=$request->thu_tu;
+        $cauHinhDiemCauHoi->diem=$request->diem;
+        $cauHinhDiemCauHoi->save();
+        return redirect()->route('cau-hinh-diem-cau-hoi.ds-cau-hinh-diem-cau-hoi');
     }
 
     /**
@@ -80,6 +91,8 @@ class CauHinhDiemCauHoiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cauHinhDiemCauHoi=CauHinhDiemCauHoi::find($id);
+        $cauHinhDiemCauHoi->delete();
+        return redirect()->route('cau-hinh-diem-cau-hoi.ds-cau-hinh-diem-cau-hoi');
     }
 }

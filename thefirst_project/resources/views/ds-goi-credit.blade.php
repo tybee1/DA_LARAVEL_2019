@@ -53,11 +53,11 @@
                                             <td>{{ $tungGoiCredit->credit}}</td>
                                             <td>{{ $tungGoiCredit->so_tien}}</td>
                                             <td>
-                                            <a href="#" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
+                                            <a href="{{route('goi-credit.them-moi')}}" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
 
-                                            <button type="button" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></button>
+                                            <a href="{{route('goi-credit.cap-nhat' ,['id'=>$tungGoiCredit->id])}}" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></a>
 
-                                            <button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></button>
+                                            <a href="{{route('goi-credit.xl-xoa' ,['id'=>$tungGoiCredit->id])}}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></a>
                                             </td>                                           
                                         </tr>
                                     @endforeach

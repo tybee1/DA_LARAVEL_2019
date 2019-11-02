@@ -99,6 +99,19 @@ Route::middleware('auth')->group(function(){
         Route::name('cau-hinh-app.')->group(function(){
             Route::get('/','CauHinhAppController@index',function(){
             })->name('ds-cau-hinh-app');
+    //route thêm mới cấu hình app
+            Route::get('them-moi', 'CauHinhAppController@create', function(){
+            })->name('them-moi');
+            Route::post('/them-moi','CauHinhAppController@store',function(){
+            })->name('xl-them-moi');
+    //Route cập nhật cấu hình app  
+            Route::get('/cap-nhat/{id}','CauHinhAppController@show', function($id){
+            })->name('cap-nhat');
+            Route::post('/cap-nhat/{id}','CauHinhAppController@update', function($id){
+            })->name('xl-cap-nhat');
+    //route xóa cấu hình app
+            Route::get('/xoa/{id}','CauHinhAppController@destroy', function($id){
+            })->name('xl-xoa');        
         });
     });
     //route cấu hình điểm câu hỏi
@@ -106,6 +119,19 @@ Route::middleware('auth')->group(function(){
         Route::name('cau-hinh-diem-cau-hoi.')->group(function(){
             Route::get('/','CauHinhDiemCauHoiController@index',function(){            
             })->name('ds-cau-hinh-diem-cau-hoi');
+    //route thêm mới cấu hình điểm câu hỏi        
+            Route::get('them-moi', 'CauHinhDiemCauHoiController@create', function(){
+            })->name('them-moi');
+            Route::post('/them-moi','CauHinhDiemCauHoiController@store',function(){
+            })->name('xl-them-moi');
+    //Route cập nhật cấu hình điểm câu hỏi         
+            Route::get('/cap-nhat/{id}','CauHinhDiemCauHoiController@show', function($id){
+            })->name('cap-nhat');
+            Route::post('/cap-nhat/{id}','CauHinhDiemCauHoiController@update', function($id){
+            })->name('xl-cap-nhat');
+    //route xóa cấu hình điểm câu hỏi 
+            Route::get('/xoa/{id}','CauHinhDiemCauHoiController@destroy', function($id){
+            })->name('xl-xoa');
         });
     });
     //route cấu hình trợ giúp
@@ -113,6 +139,19 @@ Route::middleware('auth')->group(function(){
         Route::name('cau-hinh-tro-giup.')->group(function(){
             Route::get('/','CauHinhTroGiupController@index',function(){            
             })->name('ds-cau-hinh-tro-giup');
+    //route thêm mới cấu hình trợ giúp        
+            Route::get('them-moi', 'CauHinhTroGiupController@create', function(){
+            })->name('them-moi');
+            Route::post('/them-moi','CauHinhTroGiupController@store',function(){
+            })->name('xl-them-moi');
+    //Route cập nhật cấu hình trợ giúp           
+            Route::get('/cap-nhat/{id}','CauHinhTroGiupController@show', function($id){
+            })->name('cap-nhat');
+            Route::post('/cap-nhat/{id}','CauHinhTroGiupController@update', function($id){
+            })->name('xl-cap-nhat');
+    //route xóa cấu hình trợ giúp    
+            Route::get('/xoa/{id}','CauHinhTroGiupController@destroy', function($id){
+            })->name('xl-xoa');
         });
     });
     //route chi tiết lượt chơi
@@ -128,6 +167,19 @@ Route::middleware('auth')->group(function(){
         Route::name('goi-credit.')->group(function(){
             Route::get('/','GoiCreditController@index',function(){
             })->name('ds-goi-credit');
+    //route thêm mới gói credit      
+            Route::get('them-moi', 'GoiCreditController@create', function(){
+            })->name('them-moi');
+            Route::post('/them-moi','GoiCreditController@store',function(){
+            })->name('xl-them-moi');
+    //Route cập nhật gói credit     
+            Route::get('/cap-nhat/{id}','GoiCreditController@show', function($id){
+            })->name('cap-nhat');
+            Route::post('/cap-nhat/{id}','GoiCreditController@update', function($id){
+            })->name('xl-cap-nhat');   
+    //route xóa gói credit
+            Route::get('/xoa/{id}','GoiCreditController@destroy', function($id){
+            })->name('xl-xoa');
         });
     });
     

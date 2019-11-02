@@ -40,6 +40,7 @@
                                 <table id="cau-hinh-diem-cau-hoi-datatable" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Thứ tự</th>
                                             <th>Điểm</th>                                           
                                         </tr>
@@ -53,12 +54,12 @@
                                             <td> {{ $tungCauHinhDiemCauHoi->thu_tu }}</td>
                                             <td> {{ $tungCauHinhDiemCauHoi->diem }}</td>
                                             <td>
-                                             <a href="#" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
+                                             <a href="{{route('cau-hinh-diem-cau-hoi.them-moi')}}" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
                                                 
                                            
-                                             <a href="#" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></a> 
+                                             <a href="{{route('cau-hinh-diem-cau-hoi.cap-nhat' ,['id'=>$tungCauHinhDiemCauHoi->id])}}" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></a> 
 
-                                            <button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></button>
+                                             <a href="{{route('cau-hinh-diem-cau-hoi.xl-xoa', ['id' => $tungCauHinhDiemCauHoi->id])}}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></a>
 
                                 
                                             </td>                                           

@@ -52,14 +52,17 @@ Route::middleware('auth')->group(function(){
         Route::name('cau-hoi.')->group(function(){
             Route::get('/','CauHoiController@index',function(){
                 })->name('ds-cau-hoi');
+    //Thêm mới câu hỏi            
             Route::get('them-moi', 'CauHoiController@create', function(){
             })->name('them-moi');
             Route::post('/them-moi','CauHoiController@store',function(){
             })->name('xl-them-moi');
+    //Cập nhật câu hỏi        
             Route::get('/cap-nhat/{id}','CauHoiController@show', function($id){
             })->name('cap-nhat');
             Route::post('/cap-nhat/{id}','CauHoiController@update', function($id){
             })->name('xl-cap-nhat');
+    //Xóa câu hỏi        
             Route::get('/xoa/{id}', 'CauHoiController@destroy',function($id){
             })->name('xoa');
         });
@@ -68,7 +71,18 @@ Route::middleware('auth')->group(function(){
     Route::prefix('nguoi-choi')->group(function(){
         Route::name('nguoi-choi.')->group(function(){
             Route::get('/','NguoiChoiController@index',function(){
-                })->name('ds-nguoi-choi');    
+                })->name('ds-nguoi-choi'); 
+    //route thêm người chơi
+            Route::get('them-moi', 'NguoiChoiController@create', function(){
+            })->name('them-moi');
+            Route::post('/them-moi','NguoiChoiController@store',function(){
+            })->name('xl-them-moi'); 
+    //ruote cập nhật người chơi
+            Route::get('/cap-nhat/{id}','NguoiChoiController@show', function($id){
+            })->name('cap-nhat');
+            Route::post('/cap-nhat/{id}','NguoiChoiController@update', function($id){
+            })->name('xl-cap-nhat');
+    //route xóa người chơi
             Route::get('/xoa/{id}','NguoiChoiController@destroy', function($id){
             })->name('xl-xoa');
         });

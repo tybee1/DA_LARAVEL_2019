@@ -37,7 +37,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Danh sách chi tiết lượt chơi</h4>                              
-                                <table id="chi-tiet-luot-choi-datatable" class="table dt-responsive nowrap">
+                                <table id="chi-tiet-luot-choi-datatable" class="table  nowrap">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -55,13 +55,7 @@
                                             <td>{{ $tungChiTietLuotChoi->cau_hoi_id}}</td>
                                             <td>{{ $tungChiTietLuotChoi->phuong_an }}</td> 
                                             <td>{{ $tungChiTietLuotChoi->diem }}</td>                                              
-                                            <td>
-                                            <a href="#" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
-
-                                            <button type="button" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></button>
-
-                                            <button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></button>
-                                            </td>                                           
+                                                                                 
                                         </tr>
                                     @endforeach
                                     </tbody>

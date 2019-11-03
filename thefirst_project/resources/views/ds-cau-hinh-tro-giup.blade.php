@@ -53,11 +53,10 @@
                                             <td>{{ $tungCauHinhTroGiup->thu_tu}}</td>
                                             <td>{{ $tungCauHinhTroGiup->credit}}</td>
                                             <td>
-                                            <a href="#" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
-
-                                            <button type="button" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></button>
-
-                                            <button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></button>
+                                            <a href="{{route('cau-hinh-tro-giup.them-moi')}}" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>                                                                                           
+                                                <a href="{{route('cau-hinh-tro-giup.cap-nhat' ,['id'=>$tungCauHinhTroGiup->id])}}" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></a> 
+   
+                                                <a href="{{route('cau-hinh-tro-giup.xl-xoa', ['id' => $tungCauHinhTroGiup->id])}}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></a>
                                             </td>                                           
                                         </tr>
                                     @endforeach

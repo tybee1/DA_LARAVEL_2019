@@ -37,7 +37,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Danh sách cấu hình App</h4>
-                                <table id="cau-hinh-app-datatable" class="table dt-responsive nowrap">
+                                <table id="cau-hinh-app-datatable" class="table nowrap">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -54,11 +54,9 @@
                                             <td>{{ $tungcauHoiApp->cau_hoi_sai }}</td>
                                             <td>{{ $tungcauHoiApp->thoi_gian_tra_loi}}</td>
                                             <td>
-                                            <a href="#" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
-
-                                            <button type="button" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></button>
-
-                                            <button type="button" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></button>
+                                            <a href="{{route('cau-hinh-app.them-moi')}}" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
+                                             <a href="{{route('cau-hinh-app.cap-nhat' ,['id'=>$tungcauHoiApp->id])}}" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></a> 
+                                             <a href="{{route('cau-hinh-app.xl-xoa' ,['id'=>$tungcauHoiApp->id])}}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-delete-forever"></i></a>
                                             </td>                                           
                                         </tr>
                                     @endforeach

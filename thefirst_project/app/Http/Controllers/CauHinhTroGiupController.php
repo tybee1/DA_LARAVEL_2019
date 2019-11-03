@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use App\CauHinhTroGiup;
 class CauHinhTroGiupController extends Controller
 {
     /**
@@ -24,7 +24,7 @@ class CauHinhTroGiupController extends Controller
      */
     public function create()
     {
-        //
+        return  view("them-moi-cau-hinh-tro-giup");
     }
 
     /**
@@ -35,7 +35,12 @@ class CauHinhTroGiupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cauHinhTroGiup=new CauHinhTroGiup;
+        $cauHinhTroGiup->loai_tro_giup=$request->loai_tro_giup; 
+        $cauHinhTroGiup->thu_tu=$request->thu_tu;
+        $cauHinhTroGiup->credit=$request->credit;      
+        $cauHinhTroGiup->save();
+        return redirect()->route('cau-hinh-tro-giup.ds-cau-hinh-tro-giup');
     }
 
     /**
@@ -46,7 +51,9 @@ class CauHinhTroGiupController extends Controller
      */
     public function show($id)
     {
-        //
+          
+        $cauHinhTroGiup=CauHinhTroGiup::find($id);
+        return view('them-moi-cau-hinh-tro-giup',compact('cauHinhTroGiup'));
     }
 
     /**
@@ -69,7 +76,12 @@ class CauHinhTroGiupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cauHinhTroGiup=CauHinhTroGiup::find($id);
+        $cauHinhTroGiup->loai_tro_giup=$request->loai_tro_giup; 
+        $cauHinhTroGiup->thu_tu=$request->thu_tu;
+        $cauHinhTroGiup->credit=$request->credit;      
+        $cauHinhTroGiup->save();
+        return redirect()->route('cau-hinh-tro-giup.ds-cau-hinh-tro-giup');
     }
 
     /**
@@ -80,6 +92,8 @@ class CauHinhTroGiupController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cauHinhTroGiup=CauHinhTroGiup::find($id);
+        $cauHinhTroGiup->delete();
+        return redirect()->route('cau-hinh-tro-giup.ds-cau-hinh-tro-giup');
     }
 }

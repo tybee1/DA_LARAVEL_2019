@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use App\GoiCredit;
 class GoiCreditController extends Controller
 {
     /**
@@ -24,7 +24,7 @@ class GoiCreditController extends Controller
      */
     public function create()
     {
-        //
+        return view("them-moi-goi-credit");
     }
 
     /**
@@ -35,7 +35,13 @@ class GoiCreditController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $goiCredit=new GoiCredit;
+        $goiCredit->ten_goi=$request->ten_goi;
+        $goiCredit->credit=$request->credit;
+        $goiCredit->so_tien=$request->so_tien;
+
+        $goiCredit->save();
+        return redirect()->route('goi-credit.ds-goi-credit');
     }
 
     /**
@@ -46,7 +52,8 @@ class GoiCreditController extends Controller
      */
     public function show($id)
     {
-        //
+        $goiCredit=GoiCredit::find($id);
+        return view('them-moi-goi-credit',compact('goiCredit'));
     }
 
     /**
@@ -69,7 +76,12 @@ class GoiCreditController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $goiCredit=GoiCredit::find($id);
+        $goiCredit->ten_goi=$request->ten_goi;
+        $goiCredit->credit=$request->credit;
+        $goiCredit->so_tien=$request->so_tien;
+        $goiCredit->save();
+        return redirect()->route('goi-credit.ds-goi-credit');
     }
 
     /**
@@ -80,6 +92,9 @@ class GoiCreditController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $goiCredit=GoiCredit::find($id);
+    
+        $goiCredit->delete();
+        return redirect()->route('goi-credit.ds-goi-credit'); 
     }
 }

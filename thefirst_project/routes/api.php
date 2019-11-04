@@ -31,3 +31,10 @@ Route::prefix('cau-hoi')->group(function(){
        });
     });
 });
+Route::prefix('nguoi-choi')->group(function(){
+    Route::name('nguoi-choi.')->group(function(){
+        Route::get('/','API\NguoiChoiController@layDanhSach');
+        Route::post('/xac-thuc','API\NguoiChoiController@kiemTraDangNhap',function(){
+       });
+    });
+});

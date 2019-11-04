@@ -36,7 +36,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Danh sách người chơi</h4>                                                
+                                <h4 class="header-title">Danh sách người chơi</h4>   
+                                <a href="{{route('nguoi-choi.them-moi')}}" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>                                             
                                 <table id="nguoi-choi-datatable" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>
@@ -60,7 +61,7 @@
                                             <td>{{ $tungNguoiChoi->diem_cao_nhat }}</td>
                                             <td>{{ $tungNguoiChoi->credit }}</td>
                                             <td>
-                                            <a href="{{route('nguoi-choi.them-moi')}}" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>
+                                           
                                                                                            
                                              <a href="{{route('nguoi-choi.cap-nhat', ['id' => $tungNguoiChoi->id])}}" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></a> 
                                              <a href="{{route('nguoi-choi.xl-xoa', ['id' => $tungNguoiChoi->id])}}" class="btn btn-danger waves-effect waves-light"><i class=" mdi mdi-delete-forever"></i></a>

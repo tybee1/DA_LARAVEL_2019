@@ -11,8 +11,6 @@
 |
 */
 
-
-
 // Route::get('/User/{id}', function($id){
 //     return 'User'.$id;
 // });
@@ -21,7 +19,6 @@
 Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
 Route::post('dang-nhap','QuanTriVienController@xuLyDangNhap')->name('xl-dang-nhap');
 Route::get('dang-xuat','QuanTriVienController@xuLyDangXuat')->name('dang-xuat');
-
 
 Route::middleware('auth')->group(function(){
     Route::get('/', function () {
@@ -199,7 +196,6 @@ Route::middleware('auth')->group(function(){
         });
     });
 });
-
 
 Route::get('/User/ty/{id?}', function($id = 'null'){
     return 'User'.$id;

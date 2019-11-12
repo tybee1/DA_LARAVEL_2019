@@ -40,7 +40,7 @@
                                 <form action="{{route('dang-nhap')}}" method="post">
                                 @csrf
                                     <div class="form-group mb-3">
-                                        <label for="ten_dang_nhap">Tài đăng nhập</label>
+                                        <label for="ten_dang_nhap">Tên đăng nhập</label>
                                         <input class="form-control" type="text" id="ten_dang_nhap" name = 'ten_dang_nhap' required="" placeholder="Nhập tên đăng nhập">
                                     </div>
 

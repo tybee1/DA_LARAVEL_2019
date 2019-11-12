@@ -14,11 +14,16 @@ class QuanTriVienController extends Controller
     }
     public function xuLyDangNhap(Request $request)
     {
+        // $request->validate([
+        //     'ten_dang_nhap'=>'required',
+        //     'mau_khau'=>'required'
+        // ]);
         $ten_dang_nhap = $request->ten_dang_nhap;
         $mat_khau = $request->mat_khau;
         if(Auth::attempt(['ten_dang_nhap' => $ten_dang_nhap, 'password'=>$mat_khau]))
             return redirect()->route('linh-vuc.danh-sach');
             // dd($mat_khau);
+            
     return 'Đăng nhập thất bại';
     }
     public function xuLyDangXuat()

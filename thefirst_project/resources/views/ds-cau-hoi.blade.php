@@ -36,7 +36,9 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Danh sách câu hỏi</h4>                               
+                                <h4 class="header-title">Danh sách câu hỏi</h4>   
+                                <a href="{{route('cau-hoi.ds-xoa')}}" class="btn btn-danger waves-effect waves-light"> Danh sách đã xóa 
+                                <span class="btn-label-right"><i class="fe-trash-2"></i></span></a>                            
                                 <table id="cau-hoi-datatable" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>

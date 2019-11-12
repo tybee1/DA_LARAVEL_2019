@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\LinhVuc;
+use Illuminate\Database\Eloquent\SoftDeletes;
 class LinhVucController extends Controller
 {
     /**
@@ -14,8 +15,19 @@ class LinhVucController extends Controller
      */
     public function index()
     {
-        $linhVuc=DB::table('linh_vuc')->get();
+        $linhVuc = LinhVuc::get();
         return view('ds-linh-vuc',compact('linhVuc'));
+    }
+    public function DanhSachDaXoa()
+    {       
+        $linhVuc = LinhVuc::onlyTrashed()->get();
+        return view('xoa-ds-linh-vuc',compact('linhVuc'));
+    }
+    public function KhoiPhuc($id)
+    {       
+        $linhVuc = LinhVuc::onlyTrashed()->find($id);
+        $linhVuc->restore();
+         return redirect()->route('linh-vuc.danh-sach');
     }
 
     /**

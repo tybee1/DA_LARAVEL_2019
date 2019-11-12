@@ -9,20 +9,15 @@ use App\LinhVuc;
 class LinhVucController extends Controller
 {
     public function layDanhSach(){
+
+        //lay danh sach linh vuc tu model
         $listLinhVuc = LinhVuc::all();
+
+        //json
         $result = [
             'success' => true,
             'data' => $listLinhVuc,
         ];
         return response()->json($result);
-    }
-
-    public function taoLinhVuc(Request $request){
-            $ten = $request->ten_linh_vuc;
-            $linhVuc=new LinhVuc;
-            $linhVuc->ten_linh_vuc=$ten;
-            $linhVuc->save();
-        
-     return response()->json(['success'=>true]);
     }
 }

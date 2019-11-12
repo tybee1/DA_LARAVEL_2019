@@ -35,8 +35,10 @@
  <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Danh sách lĩnh vực</h4>
+                            <div class="card-body">                            
+                                <h6 class="header-title">Danh sách lĩnh vực</h6>
+                                <a href="{{route('linh-vuc.ds-xoa')}}" class="btn btn-danger waves-effect waves-light"> Danh sách đã xóa 
+                                <span class="btn-label-right"><i class="fe-trash-2"></i></span></a>
                                 <table id="linh-vuc-datatable" class="table dt-responsive nowrap">
                                     <thead>
                                         <tr>

@@ -15,10 +15,21 @@ class CauHoiController extends Controller
      */
     public function index()
     {
-        $cauHoi=DB::table('cau_hoi')->get();
+        $cauHoi=CauHoi::get();
         return view('ds-cau-hoi',compact('cauHoi')); 
     }
 
+    public function DanhSachDaXoa()
+    {       
+        $cauHoi = CauHoi::onlyTrashed()->get();
+        return view('xoa-ds-cau-hoi',compact('cauHoi'));
+    }
+    public function KhoiPhuc($id)
+    {       
+        $cauHoi = CauHoi::onlyTrashed()->find($id);
+        $cauHoi->restore();
+         return redirect()->route('cau-hoi.ds-cau-hoi');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -29,6 +40,7 @@ class CauHoiController extends Controller
         $linhVucCauHoi = CauHoi::danhSachLinhVuc();
         return view('them-moi-cau-hoi', compact('linhVucCauHoi'));
     }
+  
 
     /**
      * Store a newly created resource in storage.
@@ -107,7 +119,6 @@ class CauHoiController extends Controller
     {
         $cauHoi = CauHoi::find($id);
         $cauHoi->delete();
-
         return redirect()->route('cau-hoi.ds-cau-hoi');
     }
 }

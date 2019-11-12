@@ -17,7 +17,7 @@
         <!-- third party js ends -->
 <script type="text/javascript">
         
-        $(document).ready(function(){$("#nguoi-choi-datatable").DataTable({language:{paginate:{previous:"<i class='mdi mdi-chevron-left'>",next:"<i class='mdi mdi-chevron-right'>"}},drawCallback:function(){$(".dataTables_paginate > .pagination").addClass("pagination-rounded")}});});
+        $(document).ready(function(){$("#linh-vuc-datatable").DataTable({language:{paginate:{previous:"<i class='mdi mdi-chevron-left'>",next:"<i class='mdi mdi-chevron-right'>"}},drawCallback:function(){$(".dataTables_paginate > .pagination").addClass("pagination-rounded")}});});
         </script>
 @endsection
 
@@ -36,35 +36,23 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Danh sách người chơi</h4>   
-                                                                 
-                                <table id="nguoi-choi-datatable" class="table dt-responsive nowrap">
+                                <h4 class="header-title">Danh sách lĩnh vực đã xóa</h4>
+                                <table id="linh-vuc-datatable" class="table  nowrap">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Tên đăng nhập</th>
-                                            <th>Mật khẩu</th>
-                                            <th>Email</th>
-                                            <th>Hình đại diện</th>
-                                            <th>Điểm cao nhất</th>
-                                            <th>Credit</th>                                                                                      
+                                            <th>Tên lĩnh vực</th>
+                                            <th></th>                                           
                                         </tr>
                                     </thead>                                                               
                                     <tbody>
-                                    @foreach($nguoiChoi as $tungNguoiChoi)
+                                    @foreach($linhVuc as $tungLinhVuc)
                                         <tr>
-                                            <td>{{ $tungNguoiChoi->id }}</td>
-                                            <td>{{ $tungNguoiChoi->ten_dang_nhap }}</td>
-                                            <td>{{ $tungNguoiChoi->mat_khau}}</td>
-                                            <td>{{ $tungNguoiChoi->email }}</td>
-                                            <td>{{ $tungNguoiChoi->hinh_dai_dien }}</td>
-                                            <td>{{ $tungNguoiChoi->diem_cao_nhat }}</td>
-                                            <td>{{ $tungNguoiChoi->credit }}</td>
-                                            <td>
-                                           
-                                            <a href="{{route('nguoi-choi.them-moi')}}" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-pencil-plus"></i></a>                                                      
-                                             <a href="{{route('nguoi-choi.cap-nhat', ['id' => $tungNguoiChoi->id])}}" class="btn btn-purple waves-effect waves-light"><i class=" mdi mdi-database-edit"></i></a> 
-                                             <a href="{{route('nguoi-choi.xl-xoa', ['id' => $tungNguoiChoi->id])}}" class="btn btn-danger waves-effect waves-light"><i class=" mdi mdi-delete-forever"></i></a>
+                                            <td>{{ $tungLinhVuc->id }}</td>
+                                            <td>Lĩnh Vực {{ $tungLinhVuc->ten_linh_vuc }}</td>
+                                            <td>                      
+                                             <a href="{{route('linh-vuc.khoi-phuc', ['id' => $tungLinhVuc->id])}}" class="btn btn-success btn-rounded waves-effect waves-light">Khôi phục</a> 
+                                             <a href="{{route('linh-vuc.danh-sach')}}" class="btn btn-danger btn-rounded waves-effect waves-light">Hủy bỏ</a>                                                              
                                             </td>                                           
                                         </tr>
                                     @endforeach

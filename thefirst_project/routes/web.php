@@ -16,7 +16,7 @@
 // });
 
 //Route đăng nhập
-Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
+Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap')->middleware('guest');
 Route::post('dang-nhap','QuanTriVienController@xuLyDangNhap')->name('xl-dang-nhap');
 Route::get('dang-xuat','QuanTriVienController@xuLyDangXuat')->name('dang-xuat');
 
@@ -42,6 +42,12 @@ Route::middleware('auth')->group(function(){
     //route xóa lĩnh vực    
             Route::get('/xoa/{id}','LinhVucController@destroy',function($id){
             })->name('xl-xoa');
+    //route ds lĩnh vực đã xóa
+            Route::get('/ds-xoa','LinhVucController@DanhSachDaXoa',function(){
+            })->name('ds-xoa');  
+    //khôi phục        
+            Route::get('/khoi-phuc/{id}','LinhVucController@KhoiPhuc',function($id){
+            })->name('khoi-phuc');           
         }); 
     });
     //route câu hỏi
@@ -62,6 +68,12 @@ Route::middleware('auth')->group(function(){
     //Xóa câu hỏi        
             Route::get('/xoa/{id}', 'CauHoiController@destroy',function($id){
             })->name('xoa');
+    //route ds câu hỏi đã xóa
+    Route::get('/ds-xoa','CauHoiController@DanhSachDaXoa',function(){
+    })->name('ds-xoa');  
+    //khôi phục        
+    Route::get('/khoi-phuc/{id}','CauHoiController@KhoiPhuc',function($id){
+    })->name('khoi-phuc');                  
         });
     });
     //route người chơi

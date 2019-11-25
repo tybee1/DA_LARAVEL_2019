@@ -11,7 +11,7 @@ class LinhVucController extends Controller
     public function layDanhSach(){
 
         //lay danh sach linh vuc tu model
-        $listLinhVuc = LinhVuc::all();
+        $listLinhVuc = LinhVuc::all()->random(4);
 
         //json
         $result = [
@@ -19,5 +19,21 @@ class LinhVucController extends Controller
             'data' => $listLinhVuc,
         ];
         return response()->json($result);
+    }
+
+    public function thuNghiem(Request $request)
+    {
+        
+        // $nguoiChoi = NguoiChoi::where('ten_dang_nhap', $request->ten_dang_nhap )->first();
+        $flag = true;
+        // if($nguoiChoi != null)
+        // {
+           
+        //     $nguoiChoi->hinh_dai_dien = $request->image;
+        //     $nguoiChoi->save();
+        //     $flag = true;
+        //     return response()->json(['success' => $flag]);
+        // }
+        return response()->json(['success' => $flag]); 
     }
 }

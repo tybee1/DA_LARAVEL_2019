@@ -5,12 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\CauHoi;
+use App\CauHinhDiemCauHoi;
 
 class CauHoiController extends Controller
 {
-    public function layDanhSach()
+    public function layDanhSach(Request $request)
     {
-        $listCauHoi = CauHoi::all();
+        $listCauHoi = CauHoi::where("linh_vuc_id", $request->linh_vuc_id)->get();
 
         $result = [
             'success' => true,
@@ -18,13 +19,15 @@ class CauHoiController extends Controller
         ];
         return response()->json($result);
     }
-    public function taoCauHoi(Request $request)
+    public function layDanhSachCauHinh()
     {
-        $listCauHoi = CauHoi::where('linh_vuc_id', $id)->get();
+        $listCauHinh = CauHinhDiemCauHoi::all();
+
         $result = [
             'success' => true,
-            'data' => $listCauHoi];
-
+            'data'=> $listCauHinh
+        ];
         return response()->json($result);
     }
+
 }

@@ -49,7 +49,7 @@
                                             <th>Điểm cao nhất</th>
                                             <th>Credit</th>                                                                                      
                                         </tr>
-                                    </thead>                                                               
+                                    </thead>                                                             
                                     <tbody>
                                     @foreach($nguoiChoi as $tungNguoiChoi)
                                         <tr>
@@ -57,7 +57,7 @@
                                             <td>{{ $tungNguoiChoi->ten_dang_nhap }}</td>
                                             <td>{{ $tungNguoiChoi->mat_khau}}</td>
                                             <td>{{ $tungNguoiChoi->email }}</td>
-                                            <td>{{ $tungNguoiChoi->hinh_dai_dien }}</td>
+                                            <td><img src="storage/app/AnhCuaTy/truongvanty.jpeg"/></td>
                                             <td>{{ $tungNguoiChoi->diem_cao_nhat }}</td>
                                             <td>{{ $tungNguoiChoi->credit }}</td>
                                             <td>

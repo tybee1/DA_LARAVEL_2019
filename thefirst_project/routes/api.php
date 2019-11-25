@@ -28,9 +28,9 @@ Route::prefix('linh-vuc')->group(function(){
 //API route câu hỏi
 Route::prefix('cau-hoi')->group(function(){
     Route::name('cau-hoi.')->group(function(){
-        Route::get('/','API\CauHoiController@layDanhSach');
-        Route::get('/{id}','API\CauHoiController@layCauHoiID',function($id){
-       });
+        Route::post('/','API\CauHoiController@layDanhSach');
+        Route::get('/cau-hinh-diem-cau-hoi','API\CauHoiController@layDanhSachCauHinh');
+  
     });
 });
 
@@ -41,6 +41,11 @@ Route::prefix('nguoi-choi')->group(function(){
         Route::post('/xac-thuc','API\NguoiChoiController@kiemTraDangNhap',function(){});
         Route::post('/dang-ky','API\NguoiChoiController@dangKyTaiKhoan',function(){});
         Route::post('/kiem-tra-ton-tai','API\NguoiChoiController@kiemTraTaiKhoanTonTai',function(){});
-        Route::post('/cap-nhat','API\NguoiChoiController@capNhatMatKhau',function(){});
+        Route::post('/cap-nhat/mat-khau','API\NguoiChoiController@capNhatMatKhau',function(){});
+        Route::post('/cap-nhat','API\NguoiChoiController@capNhatNguoiChoi',function(){});
+        Route::post('/quen-mat-khau/xac-thuc','API\NguoiChoiController@kiemTraEmailTonTai',function(){});
     });
 });
+
+Route::post('thunghiem','API\NguoiChoiController@thuNghiem',function(){});
+

@@ -47,5 +47,14 @@ Route::prefix('nguoi-choi')->group(function(){
     });
 });
 
+//API route câu hỏi
+Route::prefix('credit')->group(function(){
+    Route::name('credit.')->group(function(){
+        Route::get('/','API\CreditController@layDanhSach');
+        Route::post('/update-lich-su-mua-credit','API\CreditController@updateLichSuMua');
+  
+    });
+});
+
 Route::post('thunghiem','API\NguoiChoiController@thuNghiem',function(){});
 

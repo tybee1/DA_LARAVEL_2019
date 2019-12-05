@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 30, 2019 at 08:00 AM
+-- Generation Time: Dec 05, 2019 at 06:00 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -275,14 +275,16 @@ CREATE TABLE IF NOT EXISTS `lich_su_mua_credit` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `lich_su_mua_credit`
 --
 
 INSERT INTO `lich_su_mua_credit` (`id`, `nguoi_choi_id`, `goi_credit_id`, `credit`, `so_tien`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 100, 10000, NULL, NULL);
+(1, 1, 1, 100, 10000, NULL, NULL),
+(2, 4, 1, 100, 50000, '2019-11-30 23:03:02', '2019-11-30 23:03:02'),
+(3, 4, 2, 150, 70000, '2019-11-30 23:05:45', '2019-11-30 23:05:45');
 
 -- --------------------------------------------------------
 
@@ -398,7 +400,7 @@ CREATE TABLE IF NOT EXISTS `nguoi_choi` (
 --
 
 INSERT INTO `nguoi_choi` (`id`, `ten_dang_nhap`, `mat_khau`, `email`, `hinh_dai_dien`, `diem_cao_nhat`, `credit`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(4, 'truongvanty', '$2y$10$1580SONTEg3LqkAcwl8Sy.fy/io/X7tgtMU5S2Xe.omjzec2rteRu', 'truongthy1627@gmail.com', 'truongvanty', 0, 0, NULL, '2019-11-02 20:09:40', '2019-11-18 07:44:19'),
+(4, 'truongvanty', '$2y$10$1580SONTEg3LqkAcwl8Sy.fy/io/X7tgtMU5S2Xe.omjzec2rteRu', 'truongthy1627@gmail.com', 'truongvanty', 0, 450, NULL, '2019-11-02 20:09:40', '2019-11-30 23:05:45'),
 (5, 'tylagi123', '$2y$10$hclHGXW/fO/KP0enqdo8hOKVHFDEquiDJvgRiq03DRU.CQZECKjRa', 'tyty@gmail.com', 'null.png', 0, 0, NULL, '2019-11-02 21:32:41', '2019-11-02 21:32:41'),
 (6, '123456', '$2y$10$CIr0a1up95jgzOjculS/E.sJnppyeG7M5tn8TZrUUZ6UCvNfRkDVC', 'nhabe@gmail.com', 'null.png', 0, 0, NULL, '2019-11-06 07:23:54', '2019-11-06 07:23:54'),
 (7, '12313213', '$2y$10$7brmu5i/.9xbLGY7pmArhOeBgCswjC8BFROMJOTdzKzNnwYXq.5jy', 'wrwer', 'null.png', 0, 0, NULL, '2019-11-11 23:20:55', '2019-11-11 23:20:55'),
